@@ -1,0 +1,63 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Logs and debug
+*.log
+*.out
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Python environment
+*.env
+.env
+.env.*
+
+# Compiled files
+*.so
+
+# Jupyter notebooks (optional)
+*.ipynb_checkpoints
+
+# Test coverage
+htmlcov/
+.coverage
+.tox/
+.nox/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Unit test / coverage
+.pytest_cache/
+.cache/
+nosetests.xml
+coverage.xml
+
+# Railway local files
+railway/
+
+# Docker
+*.pid
+*.pid.lock
+
+# Misc
+*.bak
+*.swp
+*.swo
+

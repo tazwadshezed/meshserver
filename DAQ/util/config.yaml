@@ -1,0 +1,62 @@
+# ==============================
+# Main Configuration for SiteServer
+# ==============================
+
+network:
+  host: "127.0.0.1"
+  emulator_port: 5000
+  gwserver_autodiscovery_port: 59991  # Legacy key (still respected)
+
+emulator:
+  panel_delay: 0.25
+  cycle_delay: 2.0
+
+
+daq:
+  throttle_delay: 0.01
+  backpressure_qsize: 10
+  compression:
+    batch_on: 4      # Only 4 records before flush
+    batch_at: 0.5    # Or flush after 0.5 sec
+
+gateway:
+  comm_host: "0.0.0.0"           # TCP bind address for gateway connections
+  comm_port: 59990               # TCP port for gateway socket
+  ad_host: ""             # UDP bind address for MARCO/POLO
+  ad_listen_port: 59991         # UDP port to listen for MARCO
+  ad_respond_port: 59992      # Port to respond with POLO
+  mac_reg_delay: 2              # Delay after sending MAC reg request
+  packet_delay: 0.2             # Delay between gateway message sends
+  packet_batch: 10              # Max batch size for bus.handle() loop
+
+nats:
+  server: "nats://127.0.0.1:4222"
+  external_publish_server: "nats://localhost:5222"
+  external_mesh_topic: "mesh.data"
+  publish_topic: "mesh.data"
+  command_topic: "site.daq.commands"
+  response_topic: "site.daq.response"
+  client_name: "daq-process"
+  internal_mesh_topic: "site.local.mesh"
+
+logging:
+  level: "INFO"     # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_file: "/var/log/meshserver/DAQ.log"
+
+devices:
+  all: []
+  convert_irradiance: false
+  report_interval: 5
+
+ephem:
+  lat: 37.7749
+  lon: -122.4194
+  sleep_no_sun: 3600
+  max_night: 43200
+  sleep_all_night: false
+
+database:
+  redis:
+    host: "localhost"
+    port: 6379
+    db: 3
