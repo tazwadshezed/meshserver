@@ -2,10 +2,8 @@
   "build": {
     "env": {
       "PYTHONUNBUFFERED": "1"
-    },
-    "cmd": "pip install -r requirements.txt"
+    }
   },
-  "start": {
-    "cmd": "python3 run_meshserver.py"
-  }
+  "start": "python3 run_meshserver.py"
 }
+
